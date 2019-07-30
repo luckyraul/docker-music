@@ -1,7 +1,7 @@
-FROM node:8-stretch
+FROM node:12-buster-slim
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -qqy update && apt-get -qy install davfs2
+RUN apt-get -qqy update && apt-get -qy install davfs2 gettext-base
 RUN npm install -g mstream
 
 RUN mkdir -p /music/disk && \
